@@ -1,0 +1,27 @@
+.vs/DemoProject/
+APIGateway/bin/
+APIGateway/obj/project.assets.json
+APIGateway/obj/
+compose/
+DemoProject/bin/
+DemoProject/obj/
+DiagnosticSourceSample/obj/
+DiagnosticSourceWebAPI/bin/
+DiagnosticSourceWebAPI/obj/
+GrpcService1/bin/
+GrpcService1/obj/
+GrpcService2/bin/
+GrpcService2/obj/
+UserManagement/bin/
+UserManagement/obj/
+WebAPI1/bin/
+WebAPI1/obj/
+WebAPI2/bin/
+WebAPI2/obj/
+WebApplication1/obj/
+WebApplication1/bin/
+consul_1.7.4_windows_amd64.zip
+consul_1.7.4_windows_amd64/consul.exe
+consul_1.7.4_windows_amd64/external.json
+consul_1.7.4_windows_amd64/Note.txt
+consul_1.7.4_windows_amd64/New Text Document.txt

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService1";
+
+package Student.v1;
+
+service Student{
+	rpc BrowseStudent (BrowseStudentRequest) returns (stream BrowseStudentReply);
+}
+message BrowseStudentRequest{
+	int32 count=1;
+}
+message BrowseStudentReply{
+	int32 studentId=1;
+	string studentName=2;
+	string address=3;
+}

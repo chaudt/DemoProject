@@ -1,0 +1,80 @@
+{
+  "Routes": [
+    //{
+    //  "DownstreamPathTemplate": "/{controller}",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 6100
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/ttos-ops/{controller}"
+    //},
+    //{
+    //  "UseServiceDiscovery": true,
+    //  "LoadBalancerOptions": {
+    //    "Type": "LeastConnection"
+    //  },
+    //  "DownstreamPathTemplate": "/{url}",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 6100
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/gateway/ss/{url}",
+    //  "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+    //  "RouteIsCaseSensitive": false
+    //  //"AuthenticationOptions": {
+    //  //  "AuthenticationProviderKey": "TestKey",
+    //  //  "AllowedScopes": []
+    //  //}
+    //},
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "RCMS-WebAPI1",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/gateway/w1/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "RouteIsCaseSensitive": false
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "RCMS-WebAPI2",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/gateway/w2/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "RouteIsCaseSensitive": false
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "RCMS-UserService",
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "UpstreamPathTemplate": "/gateway/um/{url}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "ReRoutesCaseSensitive": false
+    }
+  ],
+  "GlobalConfiguration": {
+    //"BaseUrl": "http://localhost:49573",
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul"
+    }
+  }
+}
